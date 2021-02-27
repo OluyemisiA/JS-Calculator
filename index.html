@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <script src="https://kit.fontawesome.com/4fedcd764e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css\styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Comfortaa:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>A Simple Calculator</title>
+</head>
+
+<body>
+    <nav>
+        <div class="main">
+            <button type="button" class="openbtn">&#9776;</button>
+        </div>
+
+        <div class="sidebar">
+            <button type="button" class="closebtn">&times;</button>
+            <h4 class="p-l15"> Calculator</h4>
+            <ul class="calculator-type p-0">
+                <li class="cal-links">
+                    <a href="#standard"><i class="fas fa-calculator"></i>Standard</a>
+                </li>
+                <li class="cal-links">
+                    <a href="#scientific"><i class="fas fa-flask"></i>Scientific</a>
+                </li>
+                <li class="cal-links">
+                    <a href="#programmer"><i class="fas fa-code"></i>Programmer</a>
+                </li>
+                <li class="cal-links">
+                    <a href="#date-calculator"><i class="fas fa-calendar-alt"></i>Date Calculator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="calculator">
+        <div class="calculator-screen">
+            <div class="history"></div>
+            <div class="result">0</div>
+        </div>
+        <div class="calculator-keys">
+            <button type="button" data-action="percentage" data-type="operator">%</button>
+            <button type="button" data-action="inv" data-type="operator">1/x</button>
+            <button type="button" data-action="sqr" data-type="operator">x&sup2;</button>
+            <button type="button" data-action="square-root" data-type="operator">√</button>
+            <button type="button" data-action="factorial" data-type="operator">x!</button>
+            <button type="button" class="digits">7</button>
+            <button type="button" class="digits">8</button>
+            <button type="button" class="digits">9</button>
+            <button type="button" data-command="delete">DEL</button>
+            <button type="button" data-command="clear">AC</button>
+            <button type="button" class="digits">4</button>
+            <button type="button" class="digits">5</button>
+            <button type="button" class="digits">6</button>
+            <button type="button" data-action="multiply">&times;</button>
+            <button type="button" data-action="divide">÷</button>
+            <button type="button" class="digits">1</button>
+            <button type="button" class="digits">2</button>
+            <button type="button" class="digits">3</button>
+            <button type="button" data-action="add">+</button>
+            <button type="button" data-action="subtract">-</button>
+            <button type="button" data-action="negation">+/-</button>
+            <button type="button" class="digits">0</button>
+            <button type="button" data-command="decimal">.</button>
+            <button type="button"></button>
+            <button type="button" data-action="calculate">=</button>
+        </div>
+    </div>
+    <script src="scripts\index.js"></script>
+</body>
+
+</html>
