@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets\calculator.png" type="image/x-icon" sizes="32x32">
     <script src="https://kit.fontawesome.com/4fedcd764e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css\styles.css">
     <link
@@ -43,11 +44,11 @@
             <div class="result">0</div>
         </div>
         <div class="calculator-keys">
-            <button type="button" data-unary="percentage" data-type="operator">%</button>
-            <button type="button" data-unary="inv" data-type="operator">1/x</button>
-            <button type="button" data-unary="sqr" data-type="operator">x&sup2;</button>
-            <button type="button" data-unary="square-root" data-type="operator">√</button>
-            <button type="button" data-unary="factorial" data-type="operator">x!</button>
+            <button type="button" class="operator" data-unary="percentage" data-type="operator">%</button>
+            <button type="button" class="operator" data-unary="inv" data-type="operator">1/x</button>
+            <button type="button" class="operator" data-unary="sqr" data-type="operator">x&sup2;</button>
+            <button type="button" class="operator" data-unary="square-root" data-type="operator">√</button>
+            <button type="button" class="operator" data-unary="factorial" data-type="operator">x!</button>
             <button type="button" class="digits">7</button>
             <button type="button" class="digits">8</button>
             <button type="button" class="digits">9</button>
@@ -56,18 +57,18 @@
             <button type="button" class="digits">4</button>
             <button type="button" class="digits">5</button>
             <button type="button" class="digits">6</button>
-            <button type="button" data-action="multiply">&times;</button>
-            <button type="button" data-action="divide">÷</button>
+            <button type="button" class="operator" data-action="multiply">&times;</button>
+            <button type="button" class="operator" data-action="divide">÷</button>
             <button type="button" class="digits">1</button>
             <button type="button" class="digits">2</button>
             <button type="button" class="digits">3</button>
-            <button type="button" data-action="add">+</button>
-            <button type="button" data-action="subtract">-</button>
-            <button type="button" data-unary="negation">+/-</button>
+            <button type="button" class="operator" data-action="add">+</button>
+            <button type="button" class="operator" data-action="subtract">-</button>
+            <button type="button" class="operator" data-unary="negation">+/-</button>
             <button type="button" class="digits">0</button>
-            <button type="button" data-command="decimal">.</button>
-            <button type="button"></button>
-            <button type="button" data-action="calculate">=</button>
+            <button type="button" class="operator" data-command="decimal">.</button>
+            <button type="button" class="operator" ></button>
+            <button type="button" class="operator" data-action="calculate">=</button>
         </div>
     </div>
     <script src="scripts\index.js"></script>

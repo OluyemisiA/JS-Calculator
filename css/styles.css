@@ -9,6 +9,7 @@ body {
 /* Utilities */
 button {
   border: 1px solid #333;
+  cursor: pointer;
   font-family: "comfortaa";
   font-size: 18px;
   font-weight: bold;
@@ -16,14 +17,12 @@ button {
   outline: none;
 }
 
-button:hover {
-  background-color:#e0e0e0;
+button:nth-child(9):hover,
+button:nth-child(10):hover,
+button:nth-child(25):hover{
+    background-color: #ca0b0b;
+    color: #fff
 }
-
-/* button:nth-child(9),
-button:nth-child(10){
-
-} */
 
 .fa,
 .fas {
@@ -100,21 +99,24 @@ button:nth-child(10){
   flex-direction: column;
 }
 
+.calculator .history,
+.calculator .result {
+  background-color: #333;
+  border: 0;
+  color: #fff;
+  text-align: right;
+}
+
 .digits {
   background-color: #ffc107;
 }
 
-.digit:hover {
+.digits:hover {
     background-color: #d29f09;
-  }
+}
 
-
-.calculator .history,
-.calculator .result {
-  background-color: #333;
-  color: #fff;
-  border: 0;
-  text-align: right;
+.operator:hover{
+    background-color: #dad6d6;
 }
 
 .history {
