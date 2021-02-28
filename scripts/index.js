@@ -22,6 +22,9 @@ let secondValue = "";
 let hasAnswer = false;
 let displayedNum = 0;
 let history = "";
+let previousKey = "";
+let previousUnary = ""
+let previousAction = ""
 
 //Adding event listeners using event delegation
 keys.addEventListener("click", (e) => {
@@ -29,11 +32,10 @@ keys.addEventListener("click", (e) => {
     const key = e.target;
     const keyContent = key.textContent;
     const action = key.dataset.action;
-    const keyType = key.dataset.type;
+    const unary = key.dataset.unary;
     const command = key.dataset.command;
     displayedNum = reverseNumberFormat(getResult());
     history = getHistory();
-    let previousKey = "";
 
     if (!action) {
       if (displayedNum === "0" || hasAnswer) {
@@ -47,53 +49,19 @@ keys.addEventListener("click", (e) => {
 
 
     if (action) {
-      printResult("");
-      if (firstValue === "") {
-        firstValue = displayedNum;
-        // history = history + firstValue;
-      } else if (firstValue !== "" && activeOperator !== "") {
-        secondValue = displayedNum;
-        // history = history + " " + secondValue + ` ${keyContent}`;
-        // printHistory(history)
-      }
-      if (
-        activeOperator === "" ||
-        (activeOperator && previousKey === "operator")
-      ) {
-        activeOperator = action;
-        // history = history + ` ${keyContent}`;
-        // printHistory(history);
-      } else {
-        firstValue = evaulate(
-          firstValue,
-          activeOperator,
-          secondValue
-        ).toString();
-        printResult(firstValue);
-        activeOperator = action;
-        secondValue = "";
-        hasAnswer = true;
-      }
+      binaryOperator(action, keyContent)
+    }
+    if (unary) {
+      unaryOperator(unary, keyContent)
     }
 
+    previousKey = action ? "operator" : command ? "comand" : unary ? 'unary' : "number"
+
+    if (unary) {
+      previousUnary = unary
+    }
     if (action) {
-      previousKey = "operator";
-    } else if (command) {
-      previousKey = "command";
-    } else {
-      previousKey = "number";
-    }
-
-    if (firstValue && activeOperator && secondValue) {
-      if (command === "calculate") {
-        console.log(firstValue, activeOperator, secondValue);
-        const answer = evaulate(
-          firstValue,
-          activeOperator,
-          secondValue
-        ).toString();
-        printResult(answer);
-      }
+      previousAction = action;
     }
 
     // The function called when command buttons are clicked.
@@ -102,6 +70,68 @@ keys.addEventListener("click", (e) => {
 });
 
 // functions
+
+function binaryOperator(action, keyContent) {
+
+  // asigning the left hand value after binary operation click
+  if (!firstValue) {
+    firstValue = displayedNum;
+    history = history + firstValue;
+    printResult("");
+  }
+
+  // asigning the right hand value after binary operation click
+  if (firstValue && activeOperator) {
+    secondValue = displayedNum;
+
+    //handles the printing of history
+    if (previousKey === "operator") {
+      let historyArray = history.split(/\s/);
+      historyArray.splice(historyArray.length - 1, 1, keyContent)
+      let newHistory = historyArray.join(' ')
+      history = newHistory
+    } else if (previousKey === "unary") {
+      history = `${history} ${keyContent}`
+    } else {
+      history = history + " " + secondValue + ` ${keyContent}`;
+    }
+    printHistory(history)
+  }
+
+  if (
+    activeOperator === "" ||
+    (activeOperator && previousKey === "operator")
+  ) {
+    activeOperator = action;
+    if (previousKey !== "operator") {
+      history = history + ` ${keyContent}`;
+      printHistory(history);
+    }
+  } else {
+    firstValue = evaulate(firstValue, activeOperator, secondValue).toString();
+    printResult(firstValue);
+    activeOperator = action;
+    secondValue = "";
+    hasAnswer = true;
+  }
+}
+
+function unaryOperator(unary, keyContent) {
+  let result = evaulate(displayedNum, unary, null).toString()
+  if (!firstValue) {
+    firstValue = result;
+    history = `${history} ${displayedNum} ${keyContent}`
+    printResult(firstValue)
+    printHistory(history)
+  } else if (firstValue && previousAction) {
+    secondValue = result
+    history = `${history} ${displayedNum} ${keyContent}`
+    printResult(result)
+    printHistory(history)
+  }
+  hasAnswer = true
+}
+
 function getHistory() {
   return document.querySelector(".history").textContent;
 }
@@ -214,7 +244,7 @@ function evaulate(firstValue, activeOperator, secondValue) {
     case "percentage":
       result = percentage(firstValue);
       history = history + firstValue;
-      console.log("sup: ",history);
+      console.log("sup: ", history);
       break;
     case "inv":
       result = inv(firstValue);

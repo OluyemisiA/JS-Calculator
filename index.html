@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/4fedcd764e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css\styles.css">
     <link
@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    <nav>
         <div class="main">
             <button type="button" class="openbtn">&#9776;</button>
         </div>
@@ -37,7 +36,6 @@
                 </li>
             </ul>
         </div>
-    </nav>
 
     <div class="calculator">
         <div class="calculator-screen">
@@ -45,11 +43,11 @@
             <div class="result">0</div>
         </div>
         <div class="calculator-keys">
-            <button type="button" data-action="percentage" data-type="operator">%</button>
-            <button type="button" data-action="inv" data-type="operator">1/x</button>
-            <button type="button" data-action="sqr" data-type="operator">x&sup2;</button>
-            <button type="button" data-action="square-root" data-type="operator">√</button>
-            <button type="button" data-action="factorial" data-type="operator">x!</button>
+            <button type="button" data-unary="percentage" data-type="operator">%</button>
+            <button type="button" data-unary="inv" data-type="operator">1/x</button>
+            <button type="button" data-unary="sqr" data-type="operator">x&sup2;</button>
+            <button type="button" data-unary="square-root" data-type="operator">√</button>
+            <button type="button" data-unary="factorial" data-type="operator">x!</button>
             <button type="button" class="digits">7</button>
             <button type="button" class="digits">8</button>
             <button type="button" class="digits">9</button>

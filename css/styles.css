@@ -1,14 +1,14 @@
 body {
   box-sizing: border-box;
-  background-color: #fafafa;
-  font-family: "Montserrta";
+  background-color: #333;
+  font-family: "Montserrat";
   margin: 0;
   padding: 0;
 }
 
 /* Utilities */
 button {
-  border: 1px solid #e1e4e8;
+  border: 1px solid #333;
   font-family: "comfortaa";
   font-size: 18px;
   font-weight: bold;
@@ -17,14 +17,20 @@ button {
 }
 
 button:hover {
-  background-color: #e0e0e0;
+  background-color:#e0e0e0;
 }
+
+/* button:nth-child(9),
+button:nth-child(10){
+
+} */
 
 .fa,
 .fas {
   font-size: 1em;
   font-weight: 700;
   margin: 10px;
+  width: 20px;
 }
 
 .p-0 {
@@ -36,7 +42,7 @@ button:hover {
 }
 
 .sidebar {
-  background-color: #efefef;
+  background-color: #ffc107;
   height: 100%;
   padding-top: 30px;
   position: fixed;
@@ -51,7 +57,6 @@ button:hover {
 .sidebar a {
   color: #000;
   display: block;
-  font-size: 20px;
   padding: 8px;
   text-decoration: none;
   transition: 0.3s;
@@ -62,7 +67,7 @@ button:hover {
 }
 
 .sidebar li:hover {
-  background-color: #e0e0e0;
+  background-color: #d29f09;
 }
 
 .sidebar .closebtn {
@@ -96,12 +101,18 @@ button:hover {
 }
 
 .digits {
-  background-color: #fafafa;
+  background-color: #ffc107;
 }
+
+.digit:hover {
+    background-color: #d29f09;
+  }
+
 
 .calculator .history,
 .calculator .result {
-  background-color: #fafafa;
+  background-color: #333;
+  color: #fff;
   border: 0;
   text-align: right;
 }
