@@ -19,9 +19,19 @@ button {
 
 button:nth-child(9):hover,
 button:nth-child(10):hover,
-button:nth-child(25):hover{
-    background-color: #ca0b0b;
-    color: #fff
+button:nth-child(25):hover {
+  background-color: #ca0b0b;
+  color: #fff;
+}
+
+.coming-soon {
+    text-align: center;
+}
+
+.coming-soon h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .fa,
@@ -30,6 +40,10 @@ button:nth-child(25):hover{
   font-weight: 700;
   margin: 10px;
   width: 20px;
+}
+
+.main{
+    position: absolute;
 }
 
 .p-0 {
@@ -84,7 +98,16 @@ button:nth-child(25):hover{
 /* Calculator */
 .calculator {
   border-radius: 5px;
+  box-sizing: border-box;
+  height: 100vh;
   margin-left: 250px;
+  padding: 2%;
+  overflow: hidden;
+}
+
+.calculator-style {
+  box-sizing: border-box;
+  height: 100vh;
   padding: 2%;
 }
 
@@ -112,11 +135,11 @@ button:nth-child(25):hover{
 }
 
 .digits:hover {
-    background-color: #d29f09;
+  background-color: #d29f09;
 }
 
-.operator:hover{
-    background-color: #dad6d6;
+.operator:hover {
+  background-color: #dad6d6;
 }
 
 .history {

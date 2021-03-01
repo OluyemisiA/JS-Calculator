@@ -11,7 +11,7 @@ closeSideBar.addEventListener("click", () => {
   document.querySelector(".sidebar").style.width = "0";
 });
 
-//Calculator
+//Calculator logic
 const calculator = document.querySelector(".calculator");
 const keys = calculator.querySelector(".calculator-keys");
 
@@ -55,7 +55,7 @@ keys.addEventListener("click", (e) => {
       unaryOperator(unary, keyContent)
     }
 
-    previousKey = action ? "operator" : command ? "comand" : unary ? 'unary' : "number"
+    previousKey = action ? "operator" : command ? "comand" : unary ? "unary" : "number"
 
     if (unary) {
       previousUnary = unary
@@ -69,8 +69,8 @@ keys.addEventListener("click", (e) => {
   }
 });
 
-// functions
 
+// functions
 function binaryOperator(action, keyContent) {
 
   // asigning the left hand value after binary operation click
