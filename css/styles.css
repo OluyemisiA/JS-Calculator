@@ -25,13 +25,14 @@ button:nth-child(25):hover {
 }
 
 .coming-soon {
-    text-align: center;
+  margin: auto;
+  text-align: center;
 }
 
-.coming-soon h2{
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
+.coming-soon h2 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .fa,
@@ -42,8 +43,8 @@ button:nth-child(25):hover {
   width: 20px;
 }
 
-.main{
-    position: absolute;
+.main {
+  position: absolute;
 }
 
 .p-0 {
@@ -157,26 +158,43 @@ button:nth-child(25):hover {
 }
 
 /* Media Query */
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   /* Utilities */
   .sidebar {
     width: 0;
   }
   .sidebar .closebtn {
+    background-color: #ffc107;
     display: block;
   }
 
   .openbtn {
     background-color: transparent;
     border: none;
+    color: #fff;
     cursor: pointer;
     font-size: 20px;
     padding: 10px 15px;
     outline: none;
   }
 
+  /* Calculator */
   .calculator {
     margin-left: 0;
     padding: 2%;
   }
+
+  .calculator-style {
+    padding: 10%;
+  }
+
+
+}
+@media (max-width: 575.98px) {
+  /* Utilities */
+  .coming-soon img {
+    padding: 2%;
+    width: 300px;
+  }
+ 
 }
