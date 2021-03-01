@@ -243,8 +243,6 @@ function evaulate(firstValue, activeOperator, secondValue) {
       break;
     case "percentage":
       result = percentage(firstValue);
-      history = history + firstValue;
-      console.log("sup: ", history);
       break;
     case "inv":
       result = inv(firstValue);
